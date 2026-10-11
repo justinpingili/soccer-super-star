@@ -9,7 +9,7 @@
 <style>
 :root{--ink:#07111d;--navy:#0b1b2b;--yellow:#ffd400;--paper:#f5f7fa;--muted:#aab6c5;--white:#fff;--line:#dce3eb}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}a{color:inherit}button{font:inherit;cursor:pointer}.wrap{width:min(1180px,92%);margin:auto}
-header{height:74px;background:#06101a;color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid #243142}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:1.35rem;font-weight:850;letter-spacing:-.04em}.ball{display:grid;place-items:center;width:42px;height:42px;border:2px solid var(--yellow);border-radius:50%;font-size:25px}.brand span span{color:var(--yellow)}nav{display:flex;align-items:center;gap:25px}nav a{text-decoration:none;font-size:.92rem;font-weight:650;color:#e9eef5}nav a:hover,nav a:focus{color:var(--yellow)}.menu{display:none;background:transparent;color:white;border:1px solid #445064;border-radius:9px;padding:7px 11px}
+header{height:74px;background:#06101a;color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid #243142}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:1.35rem;font-weight:850;letter-spacing:-.04em}.ball{display:grid;place-items:center;width:42px;height:42px;border:2px solid var(--yellow);border-radius:50%;font-size:25px}.brand span span{color:var(--yellow)}nav{display:flex;align-items:center;gap:clamp(10px,1.45vw,21px)}nav a{text-decoration:none;font-size:.92rem;font-weight:650;color:#e9eef5}nav a:hover,nav a:focus-visible{color:var(--yellow)}nav a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid #ffdf4d;outline-offset:3px}.nav-account{padding:8px 12px;border:1px solid #657386;border-radius:8px}.menu{display:none;background:transparent;color:white;border:1px solid #445064;border-radius:9px;padding:7px 11px}
 .hero{position:relative;overflow:hidden;color:white;min-height:510px;background:linear-gradient(90deg,rgba(4,12,21,.96) 0%,rgba(4,12,21,.82) 42%,rgba(4,12,21,.12) 100%),url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85');background-color:#091827;background-size:cover;background-position:center}
 .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 77% 30%,rgba(255,178,63,.22),transparent 34%),linear-gradient(0deg,rgba(2,8,15,.45),transparent 55%);pointer-events:none}
 .hero-inner{position:relative;z-index:1;min-height:510px;display:flex;align-items:center;padding:70px 0}.hero-copy{max-width:670px}.eyebrow{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;color:var(--yellow);font-weight:800}.hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.98;letter-spacing:-.065em;margin:17px 0 20px}.hero h1 span{color:var(--yellow)}.hero p{font-size:1.15rem;max-width:500px;color:#e0e7ef;margin:0 0 29px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:8px;padding:12px 20px;text-decoration:none;font-weight:850;border:2px solid var(--yellow);transition:transform .18s,background .18s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--yellow);color:#07111d}.secondary{color:white;background:rgba(255,255,255,.04);border-color:#8491a2}.hero-note{position:absolute;right:4%;bottom:35px;max-width:205px;font-weight:900;font-style:italic;font-size:1.35rem;line-height:1.18;transform:rotate(-5deg);text-shadow:0 2px 10px #000}.hero-note:after{content:"";display:block;width:100px;height:5px;background:var(--yellow);margin-top:10px;transform:skew(-25deg)}
@@ -69,10 +69,17 @@ footer{background:#040b12;color:#d4dce6;padding:32px 0}.footer-row{display:flex;
 <body>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Justin Pingili home"><span class="ball">⚽</span><span>Justin <span>Pingili</span></span></a>
+    <a class="brand" href="#home" aria-label="Soccer Super Star home"><span class="ball">⚽</span><span>Soccer <span>Super Star</span></span></a>
     <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="siteNav">☰ Menu</button>
     <nav id="siteNav" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#games">Soccer Games</a><a href="#fifa">FIFA Corner</a><a href="#enchanted">Enchanted Stars</a><a href="#accounts">Player Login</a><a href="#rewards">Rewards</a><a href="#gallery">Gallery</a>
+      <a href="#home">Home</a>
+      <a href="#about">Player Profile</a>
+      <a href="#games">Play Games</a>
+      <a href="#fifa">FC Corner</a>
+      <a href="#enchanted">Magic Soccer</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#gallery">Gallery</a>
+      <a class="nav-account" href="#accounts">Player Login</a>
     </nav>
   </div>
 </header>
@@ -80,10 +87,10 @@ footer{background:#040b12;color:#d4dce6;padding:32px 0}.footer-row{display:flex;
 <section class="hero" id="home">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <div class="eyebrow">Welcome to my soccer world</div>
+      <div class="eyebrow">Welcome to Soccer Super Star</div>
       <h1>Justin<br><span>Pingili</span></h1>
       <p>Passionate about soccer. Focused on growth. Playing today for a bigger tomorrow.</p>
-      <div class="actions"><a class="btn primary" href="#journey">MY JOURNEY <span aria-hidden="true">→</span></a><a class="btn secondary" href="#gallery">VIEW GALLERY</a></div>
+      <div class="actions"><a class="btn primary" href="#journey">MEET THE PLAYER <span aria-hidden="true">→</span></a><a class="btn secondary" href="#gallery">VIEW PHOTOS</a></div>
     </div>
     <div class="hero-note">Big dreams<br>start with<br>hard work.</div>
   </div>
